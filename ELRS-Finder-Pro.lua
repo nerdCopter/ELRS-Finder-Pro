@@ -25,6 +25,8 @@
 
 -- ─── Constants ───────────────────────────────────────────────────────────────
 
+local VERSION = "0.1.0"  -- matches the GitHub release tag; bump on every release
+
 local deviceId  = 0xEE   -- ELRS TX module CRSF address
 local handsetId = 0xEA   -- RADIO_TRANSMITTER; matches elrs.lua master (r18)
 
@@ -368,7 +370,8 @@ end
 
 local function drawHeader(line2)
   lcd.clear()
-  lcd.drawText(2, 2, "ELRS Finder", MIDSIZE)
+  lcd.drawText(2, 2, "ELRS Finder Pro", MIDSIZE)
+  lcd.drawText(LCD_W - 1, 2, VERSION, SMLSIZE + RIGHT)
   lcd.drawText(2, 18, line2, 0)
 end
 
